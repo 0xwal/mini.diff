@@ -1664,7 +1664,7 @@ H.git_set_ref_text = vim.schedule_wrap(function(buf_id)
 
   -- Set
   local stdout = vim.loop.new_pipe()
-  local spawn_opts = { args = { 'show', ':0:./' .. basename }, cwd = cwd, stdio = { nil, stdout, nil } }
+	local spawn_opts = { args = { 'show', 'HEAD~1:./' .. basename }, cwd = cwd, stdio = { nil, stdout, nil } }
 
   local process, stdout_feed = nil, {}
   local on_exit = function(exit_code)
